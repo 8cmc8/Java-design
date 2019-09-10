@@ -6,6 +6,9 @@ import design.patterns.strategy.duck.MallardDuck;
 import design.patterns.strategy.duck.ModelDuck;
 import design.patterns.strategy.duck.RedHeadDuck;
 
+/**
+ * 鸭子模拟器测试类
+ */
 public class MiniDuckSimulator {
     public static void main(String[] args) {
         Duck mallard = new MallardDuck();
