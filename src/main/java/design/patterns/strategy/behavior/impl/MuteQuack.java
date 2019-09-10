@@ -1,6 +1,6 @@
-package design.model.strategy.BehaviorImpl.QuackBehaviorImpl;
+package design.patterns.strategy.behavior.impl;
 
-import design.model.strategy.Behavior.QuackBehavior;
+import design.patterns.strategy.behavior.QuackBehavior;
 
 /**
  * 哑巴

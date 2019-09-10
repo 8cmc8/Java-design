@@ -1,6 +1,6 @@
-package design.model.strategy.BehaviorImpl.FlyBehaviorImpl;
+package design.patterns.strategy.behavior.impl;
 
-import design.model.strategy.Behavior.FlyBehavior;
+import design.patterns.strategy.behavior.FlyBehavior;
 
 /**
  * 不会飞行

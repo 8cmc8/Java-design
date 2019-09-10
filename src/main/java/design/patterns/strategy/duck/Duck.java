@@ -1,7 +1,7 @@
-package design.model.strategy;
+package design.patterns.strategy.duck;
 
-import design.model.strategy.Behavior.FlyBehavior;
-import design.model.strategy.Behavior.QuackBehavior;
+import design.patterns.strategy.behavior.FlyBehavior;
+import design.patterns.strategy.behavior.QuackBehavior;
 
 /**
  * 鸭子基类（声明两个行为接口的变量）

@@ -1,9 +1,10 @@
-package design.model.strategy;
+package design.patterns.strategy;
 
-import design.model.strategy.BehaviorImpl.FlyBehaviorImpl.FlyRocketPowered;
-import design.model.strategy.DuckSub.MallardDuck;
-import design.model.strategy.DuckSub.ModelDuck;
-import design.model.strategy.DuckSub.RedHeadDuck;
+import design.patterns.strategy.behavior.impl.FlyRocketPowered;
+import design.patterns.strategy.duck.Duck;
+import design.patterns.strategy.duck.MallardDuck;
+import design.patterns.strategy.duck.ModelDuck;
+import design.patterns.strategy.duck.RedHeadDuck;
 
 public class MiniDuckSimulator {
     public static void main(String[] args) {

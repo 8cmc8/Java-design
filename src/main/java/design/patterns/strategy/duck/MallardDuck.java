@@ -1,8 +1,7 @@
-package design.model.strategy.DuckSub;
+package design.patterns.strategy.duck;
 
-import design.model.strategy.BehaviorImpl.FlyBehaviorImpl.FlyWithWings;
-import design.model.strategy.BehaviorImpl.QuackBehaviorImpl.Quack;
-import design.model.strategy.Duck;
+import design.patterns.strategy.behavior.impl.FlyWithWings;
+import design.patterns.strategy.behavior.impl.Quack;
 
 /**
  * 野鸭（鸭子抽象类的具体实现类）

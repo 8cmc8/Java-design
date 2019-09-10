@@ -1,8 +1,7 @@
-package design.model.strategy.DuckSub;
+package design.patterns.strategy.duck;
 
-import design.model.strategy.BehaviorImpl.FlyBehaviorImpl.FlyNoWay;
-import design.model.strategy.BehaviorImpl.QuackBehaviorImpl.MuteQuack;
-import design.model.strategy.Duck;
+import design.patterns.strategy.behavior.impl.FlyNoWay;
+import design.patterns.strategy.behavior.impl.MuteQuack;
 
 /**
  * 模型鸭（鸭子抽象类的具体实现类）

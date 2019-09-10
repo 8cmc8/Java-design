@@ -1,4 +1,4 @@
-package design.model.strategy.Behavior;
+package design.patterns.strategy.behavior;
 
 /**
  * 行为接口（鸭子叫）
