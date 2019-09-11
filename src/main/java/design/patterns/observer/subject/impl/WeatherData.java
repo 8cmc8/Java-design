@@ -21,7 +21,12 @@ public class WeatherData implements Subject {
 
     @Override
     public void registerObserver(Observer o) {
-        observers.add(o);
+        if (o == null) {
+            throw new NullPointerException();
+        }
+        if (!observers.contains(o)) {
+            observers.add(o);
+        }
     }
 
     @Override
