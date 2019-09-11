@@ -2,6 +2,7 @@ package design.patterns.observer.observer.impl;
 
 import design.patterns.observer.observer.DisplayElement;
 import design.patterns.observer.observer.Observer;
+import design.patterns.observer.subject.Subject;
 import design.patterns.observer.subject.impl.WeatherData;
 
 /**
@@ -12,11 +13,11 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     private float minTemp = 200;
     private float tempSum = 0.0f;
     private int numReadings;
-    private WeatherData weatherData;
+    private Subject subject;
 
-    public StatisticsDisplay(WeatherData weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public StatisticsDisplay(Subject subject) {
+        this.subject = subject;
+        subject.registerObserver(this);
     }
 
     public void update(float temp, float humidity, float pressure) {

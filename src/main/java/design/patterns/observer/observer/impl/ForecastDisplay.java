@@ -2,6 +2,7 @@ package design.patterns.observer.observer.impl;
 
 import design.patterns.observer.observer.DisplayElement;
 import design.patterns.observer.observer.Observer;
+import design.patterns.observer.subject.Subject;
 import design.patterns.observer.subject.impl.WeatherData;
 
 /**
@@ -10,11 +11,11 @@ import design.patterns.observer.subject.impl.WeatherData;
 public class ForecastDisplay implements Observer, DisplayElement {
     private float currentPressure = 29.92f;
     private float lastPressure;
-    private WeatherData weatherData;
+    private Subject subject;
 
-    public ForecastDisplay(WeatherData weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public ForecastDisplay(Subject subject) {
+        this.subject = subject;
+        subject.registerObserver(this);
     }
 
     public void update(float temp, float humidity, float pressure) {
