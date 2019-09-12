@@ -1,0 +1,11 @@
+装饰者模式：
+动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更有弹性的替代方案
+
+java.io API中大量使用了装饰者模式，有许多类都是装饰者
+（如FilterInputStream就是抽象装饰者类（继承自InputStream类），其下实现了各种具体装饰者类如BufferInputStream（继承自FilterInputStream类）
+用这些具体装饰者类来进一步包装InputStream的具体组件，如FileInputStream（直接继承自InputStream类））
+
+可以看到装饰者模式的缺点：过度使用将造成设计中有大量的小类（具体装饰者类），数量实在太多，造成使用此API难度较大（java.io难以使用）
+
+设计原则：
+1、对扩展开放，对修改关闭（允许扩展行为，不允许修改现有类）
