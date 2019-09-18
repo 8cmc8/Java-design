@@ -6,6 +6,8 @@ import design.patterns.command.remoteControl.command.commandImpl.NoCommand;
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
+    //记录前一个命令
+    Command undoCommand;
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -16,6 +18,8 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+
+        undoCommand = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -25,10 +29,16 @@ public class RemoteControl {
 
     public void onButtonWasPressed(int slot) {
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
     }
 
     public void offButtonWasPressed(int slot) {
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonWasPressed() {
+        undoCommand.undo();
     }
 
     @Override
