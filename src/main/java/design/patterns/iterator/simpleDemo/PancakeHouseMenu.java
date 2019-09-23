@@ -8,6 +8,7 @@ import java.util.Iterator;
  */
 public class PancakeHouseMenu implements Menu {
     private ArrayList<MenuItem> menuItems;
+    private String description;
 
     public PancakeHouseMenu() {
         menuItems = new ArrayList<>();
@@ -15,6 +16,7 @@ public class PancakeHouseMenu implements Menu {
         addItem("Regular Pancake Breakfast","Pancakes with fried eggs, sausage",false,2.99);
         addItem("Blueberry Pancake Breakfast","Pancakes with fresh blueberries",true,3.49);
         addItem("Waffles","Waffles, with your choice of blueberries or strawberries",true,3.59);
+        description = "BREAKFAST";
     }
 
     private void addItem(String name, String description, boolean vegetarian, double price) {
@@ -25,5 +27,10 @@ public class PancakeHouseMenu implements Menu {
     @Override
     public Iterator createIterator() {
         return menuItems.iterator();
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }
