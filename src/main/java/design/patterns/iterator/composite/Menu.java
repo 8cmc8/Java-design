@@ -41,6 +41,7 @@ public class Menu extends MenuComponent{
         return description;
     }
 
+    //相当于内部迭代器
     @Override
     public void print() {
         System.out.print("\n" + getName());
@@ -54,4 +55,11 @@ public class Menu extends MenuComponent{
             menuComponent.print();
         }
     }
+
+    @Override
+    public Iterator createIterator() {
+        return new CompositeIterator(menuComponents.iterator());
+    }
+
+
 }

@@ -1,5 +1,7 @@
 package design.patterns.iterator.composite;
 
+import java.util.Iterator;
+
 /**
  * 菜单组件
  */
@@ -33,6 +35,10 @@ public abstract class MenuComponent {
     }
 
     public void print() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Iterator createIterator() {
         throw new UnsupportedOperationException();
     }
 }

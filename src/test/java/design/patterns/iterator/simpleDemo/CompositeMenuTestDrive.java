@@ -30,5 +30,7 @@ public class CompositeMenuTestDrive {
 
         Waitress waitress = new Waitress(allMenus);
         waitress.printMenu();
+
+        waitress.printVegetarianMenu();
     }
 }
