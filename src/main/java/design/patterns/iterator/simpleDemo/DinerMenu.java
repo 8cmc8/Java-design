@@ -1,5 +1,7 @@
 package design.patterns.iterator.simpleDemo;
 
+import java.util.Iterator;
+
 /**
  * 晚餐厅菜单
  */
@@ -28,7 +30,7 @@ public class DinerMenu implements Menu {
     }
 
     @Override
-    public Iterator createIterator() {
+    public Iterator<MenuItem> createIterator() {
         return new DinerMenuIterator(menuItems);
     }
 }

@@ -1,6 +1,7 @@
 package design.patterns.iterator.simpleDemo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * 煎饼屋菜单
@@ -23,6 +24,6 @@ public class PancakeHouseMenu implements Menu {
 
     @Override
     public Iterator createIterator() {
-        return new PancakeHouseMenuIterator(menuItems);
+        return menuItems.iterator();
     }
 }
