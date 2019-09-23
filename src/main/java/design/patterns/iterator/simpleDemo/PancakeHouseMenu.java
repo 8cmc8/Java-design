@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * 煎饼屋菜单
  */
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
     private ArrayList<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
@@ -21,6 +21,7 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
+    @Override
     public Iterator createIterator() {
         return new PancakeHouseMenuIterator(menuItems);
     }
