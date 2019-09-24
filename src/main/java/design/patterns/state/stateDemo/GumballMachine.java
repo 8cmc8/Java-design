@@ -1,10 +1,7 @@
 package design.patterns.state.stateDemo;
 
 import design.patterns.state.stateDemo.state.State;
-import design.patterns.state.stateDemo.state.impl.HasQuarterState;
-import design.patterns.state.stateDemo.state.impl.NoQuarterState;
-import design.patterns.state.stateDemo.state.impl.SoldOutState;
-import design.patterns.state.stateDemo.state.impl.SoldState;
+import design.patterns.state.stateDemo.state.impl.*;
 
 /**
  * 使用状态模式实现的糖果机
@@ -15,6 +12,7 @@ public class GumballMachine {
     State noQuarterState;
     State soldOutState;
     State soldState;
+    State winnerState;
 
     State state;
     int count;
@@ -24,6 +22,7 @@ public class GumballMachine {
         noQuarterState = new NoQuarterState(this);
         soldOutState = new SoldOutState(this);
         soldState = new SoldState(this);
+        winnerState = new WinnerState(this);
         this.count = count;
         if (count > 0) {
             state = noQuarterState;
@@ -47,11 +46,18 @@ public class GumballMachine {
         this.state = state;
     }
 
+    //弹出球
     public void releaseBall() {
         System.out.println("A gumball comes rolling out the slot ...");
         if (count != 0) {
             count -= 1;
         }
+    }
+
+    //重新填球
+    public void refill(int count) {
+        this.count = count;
+        state = noQuarterState;
     }
 
     public State getHasQuarterState() {
@@ -70,7 +76,29 @@ public class GumballMachine {
         return soldState;
     }
 
+    public State getWinnerState() {
+        return winnerState;
+    }
+
     public int getCount() {
         return count;
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer info = new StringBuffer("Inventory: " + count + " gumballs");
+        if (state == noQuarterState) {
+            info.append("\nMachine is waiting for quarter\n");
+            return info.toString();
+        } else if (state == soldOutState) {
+            info.append("\nMachine is sold out\n");
+            return info.toString();
+        } else if (state == hasQuarterState) {
+            info.append("\nMachine is waiting for you to turn crank\n");
+            return info.toString();
+        } else {
+            info.append("\nMachine is being sold, please wait\n");
+            return info.toString();
+        }
     }
 }
