@@ -41,4 +41,9 @@ public class WinnerState implements State {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Machine is being sold, please wait";
+    }
 }

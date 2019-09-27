@@ -43,4 +43,9 @@ public class HasQuarterState implements State {
     public void dispense() {
         System.out.println("No gumball dispensed");
     }
+
+    @Override
+    public String toString() {
+        return "Machine is waiting for you to turn crank";
+    }
 }

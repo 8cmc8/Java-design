@@ -1,17 +1,27 @@
 package design.patterns.state;
 
 import design.patterns.state.stateDemo.GumballMachine;
+import design.patterns.state.stateDemo.GumballMonitor;
 
 public class GumballMachineStateTestDrive {
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(6);
+        GumballMachine gumballMachine = new GumballMachine(6, "California");
         System.out.println(gumballMachine);
 
-        for (int i = 0; i < 5; i++) {
-            gumballMachine.insertQuarter();
-            gumballMachine.turnCrank();
-        }
+        GumballMonitor gumballMonitor = new GumballMonitor(gumballMachine);
+        gumballMonitor.report();
 
-        System.out.println("\n" + gumballMachine);
+        gumballMachine.insertQuarter();
+        gumballMonitor.report();
+
+        gumballMachine.turnCrank();
+        gumballMonitor.report();
+
+//        for (int i = 0; i < 5; i++) {
+//            gumballMachine.insertQuarter();
+//            gumballMachine.turnCrank();
+//        }
+//
+//        System.out.println("\n" + gumballMachine);
     }
 }

@@ -16,14 +16,16 @@ public class GumballMachine {
 
     State state;
     int count;
+    String location;
 
-    public GumballMachine(int count) {
+    public GumballMachine(int count, String location) {
         hasQuarterState = new HasQuarterState(this);
         noQuarterState = new NoQuarterState(this);
         soldOutState = new SoldOutState(this);
         soldState = new SoldState(this);
         winnerState = new WinnerState(this);
         this.count = count;
+        this.location = location;
         if (count > 0) {
             state = noQuarterState;
         }
@@ -44,6 +46,10 @@ public class GumballMachine {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public State getState() {
+        return state;
     }
 
     //弹出球
@@ -84,9 +90,18 @@ public class GumballMachine {
         return count;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
-        StringBuffer info = new StringBuffer("Inventory: " + count + " gumballs");
+        StringBuffer info = new StringBuffer("Location: " + location);
+        info.append("\nInventory: " + count + " gumballs");
         if (state == noQuarterState) {
             info.append("\nMachine is waiting for quarter\n");
             return info.toString();
