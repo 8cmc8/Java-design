@@ -3,11 +3,15 @@ package design.patterns.state.stateDemo;
 import design.patterns.state.stateDemo.state.State;
 import design.patterns.state.stateDemo.state.impl.*;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 /**
  * 使用状态模式实现的糖果机
  * 内部状态不同，动作不同
+ * 实现远程服务接口
  */
-public class GumballMachine {
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
     State hasQuarterState;
     State noQuarterState;
     State soldOutState;
@@ -18,7 +22,7 @@ public class GumballMachine {
     int count;
     String location;
 
-    public GumballMachine(int count, String location) {
+    public GumballMachine(int count, String location) throws RemoteException {
         hasQuarterState = new HasQuarterState(this);
         noQuarterState = new NoQuarterState(this);
         soldOutState = new SoldOutState(this);
@@ -48,6 +52,7 @@ public class GumballMachine {
         this.state = state;
     }
 
+    @Override
     public State getState() {
         return state;
     }
@@ -86,10 +91,12 @@ public class GumballMachine {
         return winnerState;
     }
 
+    @Override
     public int getCount() {
         return count;
     }
 
+    @Override
     public String getLocation() {
         return location;
     }

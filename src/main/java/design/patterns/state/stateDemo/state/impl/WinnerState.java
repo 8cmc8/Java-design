@@ -4,7 +4,7 @@ import design.patterns.state.stateDemo.GumballMachine;
 import design.patterns.state.stateDemo.state.State;
 
 public class WinnerState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     public WinnerState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

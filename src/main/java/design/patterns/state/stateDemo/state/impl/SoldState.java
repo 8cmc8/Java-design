@@ -7,7 +7,7 @@ import design.patterns.state.stateDemo.state.State;
  * 售出糖果（状态实现）
  */
 public class SoldState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     public SoldState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

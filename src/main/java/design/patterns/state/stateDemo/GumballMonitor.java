@@ -1,16 +1,26 @@
 package design.patterns.state.stateDemo;
 
-public class GumballMonitor {
-    private GumballMachine gumballMachine;
+import java.rmi.RemoteException;
 
-    public GumballMonitor(GumballMachine gumballMachine) {
-        this.gumballMachine = gumballMachine;
+/**
+ * 客户端监视器
+ */
+public class GumballMonitor {
+    //持有远程服务接口的引用
+    private GumballMachineRemote machine;
+
+    public GumballMonitor(GumballMachineRemote machine) {
+        this.machine = machine;
     }
 
     public void report() {
-        System.out.println("Location: " + gumballMachine.getLocation());
-        System.out.println("Current inventory: " + gumballMachine.getCount());
-        System.out.println("Current state: " + gumballMachine.getState());
-        System.out.println("\n");
+        try {
+            System.out.println("Location: " + machine.getLocation());
+            System.out.println("Current inventory: " + machine.getCount());
+            System.out.println("Current state: " + machine.getState());
+            System.out.println("\n");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }

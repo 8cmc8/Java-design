@@ -9,8 +9,8 @@ import java.util.Random;
  * 有25分钱（状态实现）
  */
 public class HasQuarterState implements State {
-    GumballMachine gumballMachine;
-    Random randomWinner = new Random(System.currentTimeMillis());
+    transient GumballMachine gumballMachine;
+    transient Random randomWinner = new Random(System.currentTimeMillis());
 
     public HasQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

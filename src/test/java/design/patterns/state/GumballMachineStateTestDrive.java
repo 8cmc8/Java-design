@@ -3,8 +3,10 @@ package design.patterns.state;
 import design.patterns.state.stateDemo.GumballMachine;
 import design.patterns.state.stateDemo.GumballMonitor;
 
+import java.rmi.RemoteException;
+
 public class GumballMachineStateTestDrive {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         GumballMachine gumballMachine = new GumballMachine(6, "California");
         System.out.println(gumballMachine);
 

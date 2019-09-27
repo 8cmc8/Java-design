@@ -7,7 +7,7 @@ import design.patterns.state.stateDemo.state.State;
  * 没有25分钱（状态实现）
  */
 public class NoQuarterState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
