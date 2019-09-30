@@ -1,8 +1,8 @@
 package design.patterns.combine;
 
-import design.patterns.combine.duck.Goose;
-import design.patterns.combine.duck.Quackable;
-import design.patterns.combine.duck.quackableImpl.*;
+import design.patterns.combine.ducks.Goose;
+import design.patterns.combine.ducks.Quackable;
+import design.patterns.combine.ducks.quackableImpl.*;
 
 public class DuckSimulator {
     public static void main(String[] args) {
@@ -11,19 +11,21 @@ public class DuckSimulator {
     }
 
     void simulate() {
-        Quackable mallardDuck = new MallardDuck();
-        Quackable redheadDuck = new RedheadDuck();
-        Quackable duckCall = new DuckCall();
-        Quackable rubberDuck = new RubberDuck();
+        Quackable mallardDuck = new QuackCounter(new MallardDuck());
+        Quackable redheadDuck = new QuackCounter(new RedheadDuck());
+        Quackable duckCall = new QuackCounter(new DuckCall());
+        Quackable rubberDuck = new QuackCounter(new RubberDuck());
         Quackable gooseDuck = new GooseAdapter(new Goose());
 
-        System.out.println("Duck Simulator: With Goose Adapter");
+        System.out.println("Duck Simulator: With Decorator");
 
         simulate(mallardDuck);
         simulate(redheadDuck);
         simulate(duckCall);
         simulate(rubberDuck);
         simulate(gooseDuck);
+
+        System.out.println("The ducks quacked " + QuackCounter.getNumberOfQuacks() + " times");
     }
 
     void simulate(Quackable duck) {

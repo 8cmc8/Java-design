@@ -1,4 +1,4 @@
-package design.patterns.combine.duck;
+package design.patterns.combine.ducks;
 
 public class Goose {
     public void honk() {

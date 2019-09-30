@@ -1,6 +1,6 @@
-package design.patterns.combine.duck.quackableImpl;
+package design.patterns.combine.ducks.quackableImpl;
 
-import design.patterns.combine.duck.Quackable;
+import design.patterns.combine.ducks.Quackable;
 
 public class DuckCall implements Quackable {
     @Override

@@ -1,7 +1,7 @@
-package design.patterns.combine.duck.quackableImpl;
+package design.patterns.combine.ducks.quackableImpl;
 
-import design.patterns.combine.duck.Goose;
-import design.patterns.combine.duck.Quackable;
+import design.patterns.combine.ducks.Goose;
+import design.patterns.combine.ducks.Quackable;
 
 /**
  * 鹅转为鸭子的适配器
