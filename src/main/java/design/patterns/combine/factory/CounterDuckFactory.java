@@ -4,7 +4,7 @@ import design.patterns.combine.ducks.Quackable;
 import design.patterns.combine.ducks.quackableImpl.*;
 
 /**
- * 计数鸭子工厂（产生带计数功能的装饰者）
+ * 计数鸭子工厂（创建被装饰者包装过的鸭子）
  */
 public class CounterDuckFactory extends AbstractDuckFactory {
     @Override
