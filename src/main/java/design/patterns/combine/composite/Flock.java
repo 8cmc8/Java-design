@@ -1,8 +1,9 @@
 package design.patterns.combine.composite;
 
 import design.patterns.combine.ducks.Quackable;
+import design.patterns.combine.observer.Observer;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * 一群鸭子
@@ -16,10 +17,20 @@ public class Flock implements Quackable {
 
     @Override
     public void quack() {
-        Iterator<Quackable> iterator = quackers.iterator();
-        while (iterator.hasNext()) {
-            Quackable quacker = iterator.next();
+        for (Quackable quacker : quackers) {
             quacker.quack();
         }
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        for (Quackable duck : quackers) {
+            duck.registerObserver(observer);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
+
     }
 }

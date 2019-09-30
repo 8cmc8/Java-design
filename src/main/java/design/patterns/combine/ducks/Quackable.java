@@ -1,5 +1,7 @@
 package design.patterns.combine.ducks;
 
-public interface Quackable {
+import design.patterns.combine.observer.QuackObservable;
+
+public interface Quackable extends QuackObservable {
     void quack();
 }

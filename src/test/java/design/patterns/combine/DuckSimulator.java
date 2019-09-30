@@ -1,11 +1,11 @@
 package design.patterns.combine;
 
 import design.patterns.combine.composite.Flock;
-import design.patterns.combine.ducks.Goose;
 import design.patterns.combine.ducks.Quackable;
 import design.patterns.combine.ducks.quackableImpl.*;
 import design.patterns.combine.factory.AbstractDuckFactory;
 import design.patterns.combine.factory.CounterDuckFactory;
+import design.patterns.combine.observer.Quackologist;
 
 public class DuckSimulator {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class DuckSimulator {
         Quackable redheadDuck = duckFactory.createRedheadDuck();
         Quackable duckCall = duckFactory.createDuckCall();
         Quackable rubberDuck = duckFactory.createRubberDuck();
-        Quackable gooseDuck = new GooseAdapter(new Goose());
+        Quackable gooseDuck = duckFactory.createGooseAdapter();
 
         System.out.println("Duck Simulator: With composite - Flocks");
 
@@ -41,13 +41,20 @@ public class DuckSimulator {
 
         flockOfDucks.add(flockOfMallards);
 
-        System.out.println("Duck Simulator: Whole Flock Simulation");
+//        System.out.println("Duck Simulator: Whole Flock Simulation");
+//
+//        simulate(flockOfDucks);
+//
+//        System.out.println("Duck Simulator: Mallard Flock Simulation");
+//
+//        simulate(flockOfMallards);
+
+        System.out.println("Duck Simulator: With Observer");
+
+        Quackologist quackologist = new Quackologist();
+        flockOfDucks.registerObserver(quackologist);
 
         simulate(flockOfDucks);
-
-        System.out.println("Duck Simulator: Mallard Flock Simulation");
-
-        simulate(flockOfMallards);
 
         System.out.println("The ducks quacked " + QuackCounter.getNumberOfQuacks() + " times");
     }

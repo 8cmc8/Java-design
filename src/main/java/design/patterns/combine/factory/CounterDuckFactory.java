@@ -1,5 +1,6 @@
 package design.patterns.combine.factory;
 
+import design.patterns.combine.ducks.Goose;
 import design.patterns.combine.ducks.Quackable;
 import design.patterns.combine.ducks.quackableImpl.*;
 
@@ -25,5 +26,10 @@ public class CounterDuckFactory extends AbstractDuckFactory {
     @Override
     public Quackable createRubberDuck() {
         return new QuackCounter(new RubberDuck());
+    }
+
+    @Override
+    public Quackable createGooseAdapter() {
+        return new QuackCounter(new GooseAdapter(new Goose()));
     }
 }

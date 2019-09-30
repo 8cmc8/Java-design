@@ -1,10 +1,8 @@
 package design.patterns.combine.factory;
 
+import design.patterns.combine.ducks.Goose;
 import design.patterns.combine.ducks.Quackable;
-import design.patterns.combine.ducks.quackableImpl.DuckCall;
-import design.patterns.combine.ducks.quackableImpl.MallardDuck;
-import design.patterns.combine.ducks.quackableImpl.RedheadDuck;
-import design.patterns.combine.ducks.quackableImpl.RubberDuck;
+import design.patterns.combine.ducks.quackableImpl.*;
 
 /**
  * 普通鸭子工厂(没有装饰者)
@@ -28,5 +26,10 @@ public class DuckFactory extends AbstractDuckFactory {
     @Override
     public Quackable createRubberDuck() {
         return new RubberDuck();
+    }
+
+    @Override
+    public Quackable createGooseAdapter() {
+        return new GooseAdapter(new Goose());
     }
 }
