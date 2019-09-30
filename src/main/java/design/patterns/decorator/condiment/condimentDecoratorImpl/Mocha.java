@@ -7,9 +7,6 @@ import design.patterns.decorator.condiment.CondimentDecorator;
  * 摩卡
  */
 public class Mocha extends CondimentDecorator {
-    //保存被装饰者引用
-    Beverage beverage;
-
     public Mocha(Beverage beverage) {
         this.beverage = beverage;
     }

@@ -51,7 +51,7 @@ class Singleton2 {
     }
 }
 
-//解决方案3：用"双重检验加锁"(更注重性能)
+//解决方案3：用"双重检验加锁"(更注重性能),同步代码块只执行一次（只有首次同步的线程们会进入）
 class Singleton3 {
     //对象的创建可能发生指令的重排序，使用 volatile可以禁止指令的重排序，保证多线程环境内的系统安全。
     //new实例背后的指令：
@@ -74,7 +74,7 @@ class Singleton3 {
         if (uniqueInstance == null) {
             synchronized (Singleton3.class) {
                 if (uniqueInstance == null) {
-                    uniqueInstance = new Singleton3();
+                    uniqueInstance = new Singleton3();//new实例不是原子性操作，使用volatile来禁止指令重排序
                 }
             }
         }

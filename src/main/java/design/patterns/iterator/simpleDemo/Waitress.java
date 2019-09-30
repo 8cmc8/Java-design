@@ -1,5 +1,7 @@
 package design.patterns.iterator.simpleDemo;
 
+import design.patterns.iterator.simpleDemo.menu.Menu;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -11,9 +13,11 @@ public class Waitress {
     }
 
     public void printMenu() {
+        //ArrayList的iterator方法获取迭代器（获取菜单迭代器）
         Iterator<Menu> menuIterator = menus.iterator();
         while (menuIterator.hasNext()) {
             Menu next = menuIterator.next();
+            //使用菜单自定义的createIterator方法获取迭代器（获取每个菜单中菜单项的迭代器）
             Iterator<MenuItem> menuItemIterator = next.createIterator();
             System.out.println("\n" + next.getDescription());
             System.out.println("------");

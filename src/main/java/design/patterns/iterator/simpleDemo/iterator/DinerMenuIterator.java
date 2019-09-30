@@ -1,4 +1,6 @@
-package design.patterns.iterator.simpleDemo;
+package design.patterns.iterator.simpleDemo.iterator;
+
+import design.patterns.iterator.simpleDemo.MenuItem;
 
 import java.util.Iterator;
 

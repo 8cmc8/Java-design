@@ -7,9 +7,6 @@ import design.patterns.decorator.condiment.CondimentDecorator;
  * 豆浆
  */
 public class Soy extends CondimentDecorator {
-    //保存被装饰者引用
-    Beverage beverage;
-
     public Soy(Beverage beverage) {
         this.beverage = beverage;
     }

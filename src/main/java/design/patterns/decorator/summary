@@ -1,5 +1,8 @@
 装饰者模式：
 动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更有弹性的替代方案
+1、被装饰者类（DarkRoast;FileInputStream）继承自被装饰者抽象类（Beverage;InputStream）；
+1、装饰者类(Milk;BufferInputStream)继承自抽象装饰者类(CondimentDecorator;FilterInputStream)，而抽象装饰者类继承自被装饰者抽象类(Beverage;InputStream)；
+2、抽象装饰者类(CondimentDecorator;FilterInputStream)内部需要持有被装饰者的引用(Beverage;InputStream)；
 
 java.io API中大量使用了装饰者模式，有许多类都是装饰者
 （如FilterInputStream就是抽象装饰者类（继承自InputStream类），其下实现了各种具体装饰者类如BufferInputStream（继承自FilterInputStream类）

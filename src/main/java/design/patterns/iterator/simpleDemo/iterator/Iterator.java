@@ -1,4 +1,4 @@
-package design.patterns.iterator.simpleDemo;
+package design.patterns.iterator.simpleDemo.iterator;
 
 public interface Iterator {
     boolean hasNext();

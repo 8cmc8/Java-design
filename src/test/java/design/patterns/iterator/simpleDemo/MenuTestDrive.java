@@ -1,5 +1,10 @@
 package design.patterns.iterator.simpleDemo;
 
+import design.patterns.iterator.simpleDemo.menu.CafeMenu;
+import design.patterns.iterator.simpleDemo.menu.DinerMenu;
+import design.patterns.iterator.simpleDemo.menu.Menu;
+import design.patterns.iterator.simpleDemo.menu.PancakeHouseMenu;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
